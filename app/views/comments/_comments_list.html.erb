@@ -1,0 +1,20 @@
+<div class="bootstrap snippet">
+  <div class="blog-comment">
+    <h3 class="text-success">Comments</h3>
+    <hr/>
+    <ul class="comments">
+      <% @image.comments.each do |comment| %>
+        <li class="clearfix">
+          <img src="http://bootdey.com/img/Content/user_1.jpg" class="avatar" alt="">
+          <div class="post-comments">
+            <p class="meta"><%= time_ago_in_words(comment.created_at) %> ago - 
+              <a href="#"><%= comment.user.email %></a> says :
+              <i class="pull-right"><a href="#"><small>Reply</small></a></i>
+            </p>
+            <p><%= comment.text %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
